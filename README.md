@@ -11,4 +11,4 @@ This simple project is to help to create kafka connect development environment
 
 
 # Note
-* If using gloud environment, please add `export LD_LIBRARY_PATH=/usr/local/lib` in `~/.bashrc` file 
+* If using Gcloud cloud shell environment, please add `export LD_LIBRARY_PATH=/usr/local/lib` in `~/.bashrc` fileGcloud. In this way we can avoid docker-compose build issues  
