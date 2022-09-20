@@ -10,14 +10,14 @@
     "flush.size": "3",
     "schema.compatibility": "NONE",
     "format.class": "io.confluent.connect.sftp.sink.format.json.JsonFormat",
-	"storage.class": "io.confluent.connect.sftp.sink.storage.SftpSinkStorage",
+	  "storage.class": "io.confluent.connect.sftp.sink.storage.SftpSinkStorage",
     "sftp.host": "sftp",
     "sftp.port": "22",
     "sftp.username": "foo",
     "sftp.password": "pass",
     "sftp.working.dir": "/upload",
     "name": "sftp-poc-sink-connector",
-	"value.converter":"org.apache.kafka.connect.storage.StringConverter"
-    
+	  "value.converter":"org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable":"false"
   }
 }
