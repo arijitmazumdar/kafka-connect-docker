@@ -1,0 +1,21 @@
+{
+  "name": "postgres-string-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "pageviews-string",
+    "connection.url": "jdbc:postgresql://postgres:5432/mastercard",
+    "connection.user": "postgres",
+    "connection.password": "example",
+    "pk.mode": "none",
+    "auto.create": "true",
+    "name": "postgres-string-sink",
+    "table.name.format": "pageviews_json",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "transforms": "HoistField",
+    "transforms.HoistField.type": "org.apache.kafka.connect.transforms.HoistField$Value",
+    "transforms.HoistField.field": "line"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "datagen",
+  "config": {
+    "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+    "kafka.topic": "test3",
+    "schema.filename": "/upload/schema.avsc",
+    "schema.keyfield": "nbo_id",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "tasks.max": "1"
+  }
+}

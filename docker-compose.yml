@@ -58,11 +58,10 @@ services:
     container_name: connect
     build: ./connect
     volumes:
-      - /home/arijitublu0711/connect-plugins:/connect-plugins
+      - /home/arijitublu0711/upload:/upload
     depends_on:
       - broker
       - schema-registry
-      - sftp
     ports:
       - "8083:8083"
     environment:
@@ -189,3 +188,31 @@ services:
       - "22222:22"
     command: foo:pass:1001        
     hostname: sftp
+    depends_on: 
+      - connect
+
+  postgres:
+    depends_on: 
+      - connect
+      - pgadmin  
+    container_name: postgres
+    volumes:
+      - /home/arijitublu0711/postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432    
+    hostname: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example    
+
+  pgadmin:
+    container_name: pgadmin
+    hostname: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: example
+    ports:
+      - "8080:80"      
