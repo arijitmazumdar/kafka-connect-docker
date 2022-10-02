@@ -16,6 +16,10 @@
     "value.converter": "org.apache.kafka.connect.storage.StringConverter",
     "transforms": "HoistField",
     "transforms.HoistField.type": "org.apache.kafka.connect.transforms.HoistField$Value",
-    "transforms.HoistField.field": "line"
+    "transforms.HoistField.field": "line",
+    "errors.tolerance": "all",
+    "errors.deadletterqueue.topic.name":"pageviews-string.dlq",
+    "errors.deadletterqueue.topic.replication.factor": 1,
+    "errors.deadletterqueue.context.headers.enable":true    
   }
 }

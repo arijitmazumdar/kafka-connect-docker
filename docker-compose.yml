@@ -58,7 +58,7 @@ services:
     container_name: connect
     build: ./connect
     volumes:
-      - /home/arijitublu0711/upload:/upload
+      - ${HOME}/upload:/upload
     depends_on:
       - broker
       - schema-registry
@@ -183,7 +183,7 @@ services:
     container_name: sftp
     image: atmoz/sftp
     volumes:
-      - /home/arijitublu0711/upload:/home/foo/upload
+      - ${HOME}/upload:/home/foo/upload
     ports:
       - "22222:22"
     command: foo:pass:1001        
@@ -197,7 +197,7 @@ services:
       - pgadmin  
     container_name: postgres
     volumes:
-      - /home/arijitublu0711/postgres-data:/var/lib/postgresql/data
+      - ${HOME}/postgres-data:/var/lib/postgresql/data
     ports:
       - 5432:5432    
     hostname: postgres
