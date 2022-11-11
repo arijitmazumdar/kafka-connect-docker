@@ -3,7 +3,7 @@
   "config": {
     "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
     "kafka.topic": "test3",
-    "schema.filename": "/upload/schema.avsc",
+    "schema.filename": "/schema/pageviews.avro",
     "schema.keyfield": "nbo_id",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",

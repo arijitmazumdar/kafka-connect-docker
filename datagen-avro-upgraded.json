@@ -1,10 +1,10 @@
 {
-  "name": "datagen-avro",
+  "name": "datagen-avro-upgraded",
   "config": {
     "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
     "kafka.topic": "pageviews",
     "iterations": 20,
-    "schema.filename": "/schema/pageviews_schema.avro",
+    "schema.filename": "/schema/pageviews_schema-v2.avro",
     "schema.keyfield": "pageid",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter.schemas.enable": "true",

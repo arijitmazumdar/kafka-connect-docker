@@ -58,7 +58,8 @@ services:
     container_name: connect
     build: ./connect
     volumes:
-      - ${HOME}/upload:/upload
+      - ./schema:/schema
+      - ./files:/files  
     depends_on:
       - broker
       - schema-registry
@@ -201,7 +202,7 @@ services:
     ports:
       - 5432:5432    
     hostname: postgres
-    image: postgres
+    image: postgres:14.5
     restart: always
     environment:
       POSTGRES_PASSWORD: example    
@@ -211,6 +212,8 @@ services:
     hostname: pgadmin
     image: dpage/pgadmin4
     restart: always
+    volumes:
+      - ${HOME}/pgadmin:/var/lib/pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: example

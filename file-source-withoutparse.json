@@ -1,0 +1,11 @@
+{
+  "name": "local-file-source-wo-parse",
+  "config": {
+    "name" : "local-file-source-wo-parse",
+    "connector.class": "FileStreamSource",
+    "tasks.max": "1",
+    "file": "/files/data5.json",
+    "topic": "json-data",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter"
+  }
+}

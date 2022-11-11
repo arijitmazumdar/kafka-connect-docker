@@ -1,0 +1,15 @@
+{
+  "name": "local-file-source",
+  "config": {
+    "name" : "local-file-source",
+    "transforms" : "fromJson",
+    "transforms.fromJson.type" : "com.github.jcustenborder.kafka.connect.json.FromJson$Value",
+    "transforms.fromJson.json.schema.location" : "Inline",
+    "transforms.fromJson.json.schema.inline" : "{\"$id\":\"https://example.com/arrays.schema.json\",\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"fruits\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}}}",
+    "connector.class": "FileStreamSource",
+    "tasks.max": "1",
+    "file": "/files/data5.json",
+    "topic": "json-data",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter"
+  }
+}
