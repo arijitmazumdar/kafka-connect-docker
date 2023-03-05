@@ -1,0 +1,22 @@
+{
+  "name": "local-file-sink-error",
+  "config": {
+    "name" : "local-file-sink-error",
+    "connector.class": "FileStreamSink",
+    "tasks.max": "1",
+    "file": "/file/data-sink.json",
+    "topics": "json-data",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter.schemas.enable": "false",
+    "transforms": "castValues",
+    "transforms.castValues.type": "org.apache.kafka.connect.transforms.Cast$Value",
+    "transforms.castValues.spec": "int32",
+
+    "errors.tolerance": "all",
+    "errors.log.enable": "true",
+    "errors.log.include.messages": "true",
+    "errors.deadletterqueue.topic.name": "json-data-dlq",
+    "errors.deadletterqueue.context.headers.enable": "true"
+  }
+}
