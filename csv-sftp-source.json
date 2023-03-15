@@ -1,0 +1,25 @@
+{
+  "name": "csv-sftp-source",
+  "config": {
+    "kafka.topic": "csv-source",
+    "tasks.max": "1",
+    "connector.class": "io.confluent.connect.sftp.SftpCsvSourceConnector",
+    "key.schema":"{\"name\" : \"com.example.users.UserKey\",\"type\" : \"STRUCT\",\"isOptional\" : false,\"fieldSchemas\" : {\"id\" : {\"type\" : \"INT64\",\"isOptional\" : false}}}",
+    "value.schema":"{\"name\" : \"com.example.users.User\",\"type\" : \"STRUCT\",\"isOptional\" : false,\"fieldSchemas\" : {\"id\" : {\"type\" : \"INT64\",\"isOptional\" : false},\"first_name\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"last_name\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"email\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"gender\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"ip_address\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"last_login\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"account_balance\" : {\"name\" : \"org.apache.kafka.connect.data.Decimal\",\"type\" : \"BYTES\",\"version\" : 1,\"parameters\" : {\"scale\" : \"2\"},\"isOptional\" : true},\"country\" : {\"type\" : \"STRING\",\"isOptional\" : true},\"favorite_color\" : {\"type\" : \"STRING\",\"isOptional\" : true}}}",
+    "sftp.host": "localhost",
+    "sftp.port": "2022",
+    "sftp.username": "user",
+    "sftp.password": "pass",
+    "input.path": "/",
+    "finished.path": "/finished",
+    "error.path": "/error",
+    "behavior.on.error": "LOG",
+    "csv.first.row.as.header": "false",
+    "input.file.pattern":"file-\\d\\d\\d\\d-\\d\\d-\\d\\d.csv",
+    "name": "csv-sftp-source",
+    "key.converter":"org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable":"false",
+    "value.converter":"org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable":"false"
+  }
+}
