@@ -2,7 +2,7 @@
 version: '3'
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.2.1
+    image: docker.io/confluentinc/cp-zookeeper:7.2.1
     hostname: zookeeper
     container_name: zookeeper
     ports:
@@ -12,7 +12,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   broker:
-    image: confluentinc/cp-server:7.2.1
+    image: docker.io/confluentinc/cp-server:7.2.1
     hostname: broker
     container_name: broker
     depends_on:
@@ -41,7 +41,7 @@ services:
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
       KAFKA_LOG4J_ROOT_LOGLEVEL: WARN
   schema-registry:
-    image: confluentinc/cp-schema-registry:7.2.1
+    image: docker.io/confluentinc/cp-schema-registry:7.2.1
     hostname: schema-registry
     container_name: schema-registry
     depends_on:
@@ -87,7 +87,7 @@ services:
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
 
   control-center:
-    image: confluentinc/cp-enterprise-control-center:7.2.1
+    image: docker.io/confluentinc/cp-enterprise-control-center:7.2.1
     hostname: control-center
     container_name: control-center
     depends_on:
@@ -110,7 +110,7 @@ services:
       PORT: 9021
 
   ksqldb-server:
-    image: confluentinc/cp-ksqldb-server:7.2.1
+    image: docker.io/confluentinc/cp-ksqldb-server:7.2.1
     hostname: ksqldb-server
     container_name: ksqldb-server
     depends_on:
@@ -133,7 +133,7 @@ services:
       KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE: 'true'
 
   ksqldb-cli:
-    image: confluentinc/cp-ksqldb-cli:7.2.1
+    image: docker.io/confluentinc/cp-ksqldb-cli:7.2.1
     container_name: ksqldb-cli
     depends_on:
       - broker
@@ -143,7 +143,7 @@ services:
     tty: true
 
   ksql-datagen:
-    image: confluentinc/ksqldb-examples:7.2.1
+    image: docker.io/confluentinc/ksqldb-examples:7.2.1
     hostname: ksql-datagen
     container_name: ksql-datagen
     depends_on:
@@ -165,7 +165,7 @@ services:
       STREAMS_SCHEMA_REGISTRY_PORT: 8081
 
   rest-proxy:
-    image: confluentinc/cp-kafka-rest:7.2.1
+    image: docker.io/confluentinc/cp-kafka-rest:7.2.1
     depends_on:
       - broker
       - schema-registry
@@ -182,7 +182,7 @@ services:
 
   sftp:
     container_name: sftp
-    image: atmoz/sftp
+    image: docker.io/atmoz/sftp
     volumes:
       - ${HOME}/upload:/home/foo/upload
     ports:
@@ -202,7 +202,7 @@ services:
     ports:
       - 5432:5432    
     hostname: postgres
-    image: postgres:14.5
+    image: docker.io/postgres:14.5
     restart: always
     environment:
       POSTGRES_PASSWORD: example    
@@ -210,7 +210,7 @@ services:
   pgadmin:
     container_name: pgadmin
     hostname: pgadmin
-    image: dpage/pgadmin4
+    image: docker.io/dpage/pgadmin4
     restart: always
     volumes:
       - ${HOME}/pgadmin:/var/lib/pgadmin

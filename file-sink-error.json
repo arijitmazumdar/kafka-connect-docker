@@ -4,7 +4,7 @@
     "name" : "local-file-sink-error",
     "connector.class": "FileStreamSink",
     "tasks.max": "1",
-    "file": "/file/data-sink.json",
+    "file": "/files/data-sink2.json",
     "topics": "json-data",
     "value.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter.schema.registry.url": "http://localhost:8081",
