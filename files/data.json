@@ -1,1 +1,79 @@
-"{\"fruits\":\"apple\"}"
+{
+   "corelationId":"fcm-177149679",
+   "eventId":"FCM250602",
+   "eventTime":"2022-09-27 09:18:24.495",
+   "eventType":"ResourceOrderExportResponseEvent",
+   "sourceSystem":"B2B-CIM",
+   "resourceOrder":{
+      "expectedCompletionDate":"2022-10-12",
+      "resourceOrderItem":[
+         {
+            "id":"1",
+            "reason":"message",
+            "resource":{
+               "resourceCharacteristic":[
+                  {
+                     "name":"PRE_NEGOTIATION_ID",
+                     "value":"DEU.DTAG.V023062706"
+                  }
+               ],
+               "relatedParty":[
+                  {
+                     "dtagContactNumber":"2710035312",
+                     "dtagLineNo":"DEU.DTAG.3000043133",
+                     "dtagProduct":"VDSL SA 250 Mbit/s SV",
+                     "dtagTech":"false",
+                     "lineOwner":"DTAG",
+                     "product":"VDSL SA 250 Mbit/s SV",
+                     "role":"accessProvider"
+                  }
+               ],
+               "relatedEntity":[
+                  {
+                     "areaCode":"040",
+                     "id":"1",
+                     "telephoneNumber":"401617875",
+                     "numberPortingResultCode":"8002"
+                  }
+               ]
+            },
+            "errorMessage":[
+               {
+                  "additionalInfoCorrectionValue":"Fischerinsel",
+                  "code":"8106",
+                  "message":"Adresse abweichend Strau00dfe (ADASTR)",
+                  "additionalInfoCode":"8105",
+                  "additionalInfoMessage":"Adresse abweichend Ort"
+               },
+               {
+                  "additionalInfoCorrectionValue":"Nettetal",
+                  "code":"8105",
+                  "message":"Adresse abweichend Ort (ADAORT)",
+                  "additionalInfoCode":"8105",
+                  "additionalInfoMessage":"Adresse abweichend Ort"
+               },
+               {
+                  "additionalInfoCorrectionValue":"41334",
+                  "code":"8104",
+                  "message":"Adresse abweichend PLZ (ADAPLZ)",
+                  "additionalInfoCode":"8105",
+                  "additionalInfoMessage":"Adresse abweichend Ort"
+               },
+               {
+                  "additionalInfoCorrectionValue":"37",
+                  "code":"8107",
+                  "message":"Adresse abweichend Hausnummer (ADAHSNR)",
+                  "additionalInfoCode":"8105",
+                  "additionalInfoMessage":"Adresse abweichend Ort"
+               },
+               {
+                  "additionalInfoMessage":"Adresse abweichend Ort",
+                  "additionalInfoCode":"8105",
+                  "code":"8002",
+                  "message":"Auftragsbestu00e4tigung (NAT)"
+               }
+            ]
+         }
+      ]
+   }
+}

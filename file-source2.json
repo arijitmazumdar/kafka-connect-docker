@@ -1,19 +1,18 @@
 {
-  "name": "local-file-source",
+  "name": "local-file-source-2",
   "config": {
-    "name" : "local-file-source",
+    "name" : "local-file-source-2",
     "transforms" : "fromJson,debug2",
     "transforms.fromJson.type" : "com.github.jcustenborder.kafka.connect.json.FromJson$Value",
     "transforms.fromJson.json.schema.location" : "Inline",
     "transforms.fromJson.json.schema.inline" : "{\"type\":\"object\",\"required\":[],\"properties\":{\"eventId\":{\"type\":\"string\"},\"eventTime\":{\"type\":\"string\"},\"eventType\":{\"type\":\"string\"},\"sourceSystem\":{\"type\":\"string\"},\"corelationId\":{\"type\":\"string\"},\"resourceOrder\":{\"type\":\"object\",\"required\":[],\"properties\":{\"expectedCompletionDate\":{\"type\":\"string\"},\"resourceOrderItem\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[],\"properties\":{\"id\":{\"type\":\"string\"},\"resource\":{\"type\":\"object\",\"required\":[],\"properties\":{\"resourceCharacteristic\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[],\"properties\":{\"name\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}}}},\"relatedEntity\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[],\"properties\":{\"id\":{\"type\":\"string\"},\"areaCode\":{\"type\":\"string\"},\"telephoneNumber\":{\"type\":\"string\"},\"numberPortingResultCode\":{\"type\":\"string\"}}}},\"relatedParty\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[],\"properties\":{\"lineOwner\":{\"type\":\"string\"},\"dtagLineNo\":{\"type\":\"string\"},\"dtagContactNumber\":{\"type\":\"string\"},\"dtagTech\":{\"type\":\"string\"},\"product\":{\"type\":\"string\"},\"dtagProduct\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"}}}}}},\"reason\":{\"type\":\"string\"},\"errorMessage\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[],\"properties\":{\"code\":{\"type\":\"string\"},\"message\":{\"type\":\"string\"},\"additionalInfoCode\":{\"type\":\"string\"},\"additionalInfoMessage\":{\"type\":\"string\"},\"additionalInfoCorrectionValue\":{\"type\":\"string\"}}}}}}}}}}}",
-    "transforms.debug2.type": "kafka.connect.smt.RemoveSubNamespace$Value",
+    "transforms.debug2.type": "com.github.jcustenborder.kafka.connect.transform.common.Debug",
     "connector.class": "FileStreamSource",
     "tasks.max": "1",
     "file": "/files/data-str.json",
-    "topic": "avro-data",
+    "topic": "avro-data-2",
     "value.converter": "io.confluent.connect.avro.AvroConverter",
-    "value.converter.schema.registry.url": "http://schema-registry:8081",
-    "value.converter.connect.meta.data" : "false",
-    "value.converter.enhanced.avro.schema.support" : "true"
+    "value.converter.schemas.enable": "true",
+    "value.converter.schema.registry.url": "http://schema-registry:8081"
   }
 }
