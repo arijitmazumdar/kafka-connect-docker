@@ -1,0 +1,23 @@
+{
+ "name": "debezium-students",
+ "config": {
+ "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+ "tasks.max": "1",
+ "snapshot.mode": "initial",
+ "signal.enabled.channels": "kafka",
+ "signal.kafka.topic": "debezium-signal",
+ "signal.kafka.groupId": "debezium-students",
+ "signal.kafka.bootstrap.servers": "broker:9092",
+ "notification.enabled.channels": "log",
+ "database.hostname": "postgres",
+ "database.port": "5432",
+ "database.user": "postgres",
+ "database.password": "example",
+ "database.dbname" : "debezium",
+ "database.server.name": "debezium",
+ "database.whitelist": "public.students",
+ "database.history.kafka.bootstrap.servers": "broker:9092",
+ "database.history.kafka.topic": "schema-changes.inventory",
+ "topic.prefix": "debezium"
+ }
+}

@@ -203,7 +203,7 @@ services:
     ports:
       - 5432:5432    
     hostname: postgres
-    image: docker.io/postgres:14.5
+    image: debezium/postgres:15-alpine
     restart: always
     environment:
       POSTGRES_PASSWORD: example    
