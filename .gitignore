@@ -1,0 +1,4 @@
+# Ignore pgAdmin session files and local PostgreSQL data directory
+pgadmin_sessions/
+postgres-data/
+pgadmin/

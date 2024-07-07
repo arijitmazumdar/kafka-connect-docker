@@ -1,0 +1,17 @@
+{
+    "name": "debezium-exercises-option2",
+    "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "publication.name": "my_publications",
+        "plugin.name": "pgoutput",
+        "slot.name": "my_slot",
+        "database.hostname": "postgres",
+        "database.port": "5432",
+        "database.user": "postgres",
+        "database.password": "example",
+        "database.dbname" : "exercises",
+        "table.include.list": "cd.facilities,cd.members",
+        "database.history.kafka.bootstrap.servers": "broker:9092",
+        "topic.prefix": "option2"
+    }
+}
