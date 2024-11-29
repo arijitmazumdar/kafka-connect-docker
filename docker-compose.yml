@@ -214,7 +214,6 @@ services:
     image: docker.io/dpage/pgadmin4
     restart: always
     volumes:
-      - ./pgadmin:/var/lib/pgadmin
       - ./pgadmin_sessions:/var/lib/pgadmin/sessions
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com

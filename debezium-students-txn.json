@@ -1,0 +1,24 @@
+{
+ "name": "debezium-students-txn",
+ "config": {
+ "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+ "tasks.max": "1",
+ "snapshot.mode": "initial",
+ "signal.enabled.channels": "source",
+ "signal.data.collection": "public.debezium_signal",
+ "notification.enabled.channels": "log",
+ "database.hostname": "postgres",
+ "database.port": "5432",
+ "database.user": "postgres",
+ "database.password": "example",
+ "database.dbname" : "exercises",
+ "table.include.list": "cd.facilities,cd.members",
+ "transaction.isolation.level": "SNAPSHOT",
+ "topic.transaction": "transaction",
+ "provide.transaction.metadata": "true",
+ "include.schema.changes": "true",
+ "database.history.kafka.bootstrap.servers": "broker:9092",
+ "database.history.kafka.topic": "schema-changes.inventory",
+ "topic.prefix": "debezium"
+ }
+}
